@@ -19032,6 +19032,7 @@ var ContactForm = createClass({
     var _this = this;
     xmlhttp.onreadystatechange = function () {
       if (xmlhttp.readyState === 4) {
+        console.log("here is xmlhttp.responseText" + xmlhttp.responseText);
         var response = JSON.parse(xmlhttp.responseText);
         if (xmlhttp.status === 200 && response.status === 'OK') {
           console.log('this is xmlhttp.status status' + xmlhttp.status);
