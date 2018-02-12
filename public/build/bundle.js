@@ -19034,8 +19034,8 @@ var ContactForm = createClass({
       if (xmlhttp.readyState === 4) {
         console.log("here is xmlhttp.responseText" + xmlhttp.responseText);
         var response = JSON.parse(xmlhttp.responseText);
-        if (xmlhttp.status === 200 && response.status === 'OK') {
-          console.log('this is xmlhttp.status status' + xmlhttp.status);
+        if (xmlhttp.status === 200 && response.status === 'OKOK') {
+          console.log('Success! this is xmlhttp.status status' + xmlhttp.status);
           _this.setState({ type: 'success', message: 'We have received your message and will get in touch shortly. Thanks!' });
         } else {
           console.log('this is error xmlhttp.status status' + xmlhttp.status + 'response.status' + response.status);
