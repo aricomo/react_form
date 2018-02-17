@@ -19030,8 +19030,10 @@ var ContactForm = createClass({
     // Send the form data.
     var xmlhttp = new XMLHttpRequest();
     var _this = this;
+    //onreadystatechangeとはreadyState(0~4) の値が変わるたびに、自動的に呼ばれる関数（または関数名）を格納します.
     xmlhttp.onreadystatechange = function () {
       if (xmlhttp.readyState === 4) {
+        //4: リクエストが終了し、レスポンスの準備が完了しました.
         console.log("here is xmlhttp.responseText" + xmlhttp.responseText);
         var response = JSON.parse(xmlhttp.responseText);
         if (xmlhttp.status === 200 && response.status === 'OKOK') {
@@ -19044,8 +19046,9 @@ var ContactForm = createClass({
       }
       console.log('this is xmlhttp.readyState' + xmlhttp.readyState);
     };
-    xmlhttp.open('POST', 'send', true); //post to url /send directory async true
+    xmlhttp.open('POST', '/send', true); //リクエストします。post to url /send directory async true　for example open(method,url,async)
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //send(string)サーバへリクエストを送信します. 引数は POST リクエストの場合に使用します.
     xmlhttp.send(this.requestBuildQueryString(formData));
   }, //sendFormData end
   /**
