@@ -19062,6 +19062,7 @@ var ContactForm = createClass({
     for (var property in params) if (params.hasOwnProperty(property)) {
       queryString.push(encodeURIComponent(property) + '=' + encodeURIComponent(params[property]));
     }
+    console.log(queryString.join('&'));
     return queryString.join('&');
   },
   /**
